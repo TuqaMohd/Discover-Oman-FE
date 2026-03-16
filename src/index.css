@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * Discover Oman — Design System
+ * 
+ * Palette inspired by Omani landscape:
+ * - Copper/gold: warm desert sands and traditional metalwork
+ * - Teal: Arabian Sea and turquoise wadis
+ * - Sand: desert dunes and ancient architecture
+ * - Rich browns: frankincense-stained souqs
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 20 25% 12%;
+
+    --card: 38 30% 95%;
+    --card-foreground: 20 25% 12%;
+
+    --popover: 40 33% 97%;
+    --popover-foreground: 20 25% 12%;
+
+    --primary: 30 65% 45%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 175 50% 28%;
+    --secondary-foreground: 40 33% 97%;
+
+    --muted: 35 18% 88%;
+    --muted-foreground: 20 12% 45%;
+
+    --accent: 35 50% 80%;
+    --accent-foreground: 20 25% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 22% 82%;
+    --input: 35 22% 82%;
+    --ring: 30 65% 45%;
+
+    --radius: 0.75rem;
+
+    --copper: 30 65% 45%;
+    --copper-light: 32 60% 65%;
+    --copper-dark: 28 70% 32%;
+    --teal: 175 50% 28%;
+    --teal-light: 175 45% 45%;
+    --sand: 38 40% 90%;
+    --sand-dark: 35 25% 72%;
+    --dune: 32 30% 60%;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 38 30% 95%;
+    --sidebar-foreground: 20 25% 12%;
+    --sidebar-primary: 30 65% 45%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 35 50% 80%;
+    --sidebar-accent-foreground: 20 25% 12%;
+    --sidebar-border: 35 22% 82%;
+    --sidebar-ring: 30 65% 45%;
+  }
+
+  .dark {
+    --background: 20 20% 8%;
+    --foreground: 38 30% 92%;
+
+    --card: 20 18% 12%;
+    --card-foreground: 38 30% 92%;
+
+    --popover: 20 20% 8%;
+    --popover-foreground: 38 30% 92%;
+
+    --primary: 32 60% 55%;
+    --primary-foreground: 20 20% 8%;
+
+    --secondary: 175 40% 38%;
+    --secondary-foreground: 38 30% 92%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 35 15% 55%;
+
+    --accent: 32 35% 25%;
+    --accent-foreground: 38 30% 92%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 32 60% 55%;
+
+    --copper: 32 60% 55%;
+    --copper-light: 32 55% 70%;
+    --copper-dark: 28 65% 40%;
+    --teal: 175 40% 38%;
+    --teal-light: 175 35% 55%;
+    --sand: 20 15% 18%;
+    --sand-dark: 20 12% 25%;
+    --dune: 32 20% 40%;
+
+    --sidebar-background: 20 18% 12%;
+    --sidebar-foreground: 38 30% 92%;
+    --sidebar-primary: 32 60% 55%;
+    --sidebar-primary-foreground: 20 20% 8%;
+    --sidebar-accent: 32 35% 25%;
+    --sidebar-accent-foreground: 38 30% 92%;
+    --sidebar-border: 20 15% 20%;
+    --sidebar-ring: 32 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  /* RTL support */
+  [dir="rtl"] {
+    font-family: var(--font-body);
+  }
+}
+
+@layer components {
+  .text-gradient-copper {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--copper)), hsl(var(--copper-light)));
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(
+      180deg,
+      hsla(var(--foreground), 0.6) 0%,
+      hsla(var(--foreground), 0.3) 50%,
+      hsla(var(--foreground), 0.7) 100%
+    );
+  }
+
+  .bg-gradient-copper {
+    background: linear-gradient(135deg, hsl(var(--copper)), hsl(var(--copper-dark)));
+  }
+
+  .bg-gradient-teal {
+    background: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--teal-light)));
+  }
+
+  .bg-sand {
+    background-color: hsl(var(--sand));
+  }
+
+  .shadow-warm {
+    box-shadow: 0 4px 20px -4px hsla(var(--copper), 0.15),
+                0 2px 8px -2px hsla(var(--foreground), 0.08);
+  }
+
+  .shadow-warm-lg {
+    box-shadow: 0 10px 40px -8px hsla(var(--copper), 0.2),
+                0 4px 16px -4px hsla(var(--foreground), 0.1);
+  }
+
+  .category-card {
+    @apply rounded-xl p-6 transition-all duration-300 cursor-pointer border border-border;
+    background: hsl(var(--card));
+  }
+
+  .category-card:hover {
+    @apply shadow-warm-lg;
+    transform: translateY(-4px);
+    border-color: hsl(var(--copper-light));
+  }
+
+  .destination-card {
+    @apply rounded-xl overflow-hidden transition-all duration-300 border border-border;
+    background: hsl(var(--card));
+  }
+
+  .destination-card:hover {
+    @apply shadow-warm-lg;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary-copper {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--copper)), hsl(var(--copper-dark)));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-primary-copper:hover {
+    @apply shadow-warm;
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+  }
+
+  .btn-secondary-teal {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--teal-light)));
+    color: hsl(var(--secondary-foreground));
+  }
+
+  .btn-secondary-teal:hover {
+    @apply shadow-warm;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-warm {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 border-2;
+    border-color: hsl(var(--copper));
+    color: hsl(var(--copper));
+    background: transparent;
+  }
+
+  .btn-outline-warm:hover {
+    background: hsl(var(--copper));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .crowd-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .crowd-dot-active {
+    background: hsl(var(--copper));
+  }
+
+  .crowd-dot-inactive {
+    background: hsl(var(--muted));
+  }
+
+  .leaflet-container {
+    @apply rounded-xl;
+    font-family: var(--font-body) !important;
+  }
+}
+
+@layer utilities {
+  .text-copper { color: hsl(var(--copper)); }
+  .text-teal { color: hsl(var(--teal)); }
+  .text-dune { color: hsl(var(--dune)); }
+  .bg-copper { background-color: hsl(var(--copper)); }
+  .bg-teal { background-color: hsl(var(--teal)); }
+  .border-copper { border-color: hsl(var(--copper)); }
+  .border-teal { border-color: hsl(var(--teal)); }
+}
