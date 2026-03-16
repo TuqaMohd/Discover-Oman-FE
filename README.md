@@ -14,7 +14,7 @@ Most planners only illustrate a list of spots. However, this project uses a mult
 
  1. Tech & Tools
 
-I chose these tools to keep the app fast, type-safe, and easy to scale:
+I chose those tools to keep the app fast, type-safe, and easy to scale:
 
 Category	Tools
 Core	React 18 + TypeScript
