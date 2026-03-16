@@ -33,7 +33,7 @@ download
 content_copy
 expand_less
 # Clone it
-git clone <YOUR_GIT_URL>
+git clone <https://github.com/TuqaMohd/Discover-Oman-FE>
 cd discover-oman
 
 # Install dependencies
@@ -42,7 +42,7 @@ npm install
 # Run the dev server
 npm run dev
 
-Otherwise, you can easily access it via GitHub: https://github.com/TuqaMohd/DiscoverOmanFE
+Otherwise, you can easily access it via GitHub: https://github.com/TuqaMohd/Discover-Oman-FE
 
  3. Itinerary Algorithm ("The Brain")
 
