@@ -34,7 +34,7 @@ content_copy
 expand_less
 # Clone it
 git clone <https://github.com/TuqaMohd/Discover-Oman-FE>
-cd discover-oman
+cd discover-oman-fe
 
 # Install dependencies
 npm install
