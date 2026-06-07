@@ -81,6 +81,7 @@ Season	0.20	Oman's weather varies wildly; ensures you're in the right place.
 Crowds/Cost	0.25	Penalizes overcrowded or over-budget spots.
 Detour	0.15	Minimizes time spent in the car.
 Diversity	0.10	Makes sure you don't just see 5 forts in one day.
+
  5. State Management & Rendering
 
 Since this is a specialized tool, I used React Context for global stuff (like the English/Arabic toggle) and LocalStorage for everything else. This means you can close your tab, come back a week later, and your trip is still there—no database required.
