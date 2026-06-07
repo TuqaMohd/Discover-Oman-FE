@@ -23,6 +23,7 @@ Styling	Tailwind CSS + shadcn/ui (clean, accessible look)
 Maps	Leaflet.js (lightweight and open-source)
 Animation	Framer Motion
 State	React Context + LocalStorage (zero-latency persistence)
+
  2. Starting up the website
 
 If you want to run my project locally, you're going to need to have Node.js installed.
